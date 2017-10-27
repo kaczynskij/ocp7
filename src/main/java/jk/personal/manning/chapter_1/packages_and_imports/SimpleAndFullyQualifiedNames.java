@@ -9,6 +9,7 @@ public class SimpleAndFullyQualifiedNames {
 	// fully-qualified name
 	jk.personal.manning.chapter_1.casting.Book book = new jk.personal.manning.chapter_1.casting.Book();
 
+	// simple name - import above
 	Chair chair = new Chair();
 
     }

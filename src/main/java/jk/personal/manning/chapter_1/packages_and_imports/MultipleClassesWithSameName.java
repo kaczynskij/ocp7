@@ -1,4 +1,4 @@
-package MultipleClassesWithSameName;
+package jk.personal.manning.chapter_1.packages_and_imports;
 
 import java.sql.Date;
 
