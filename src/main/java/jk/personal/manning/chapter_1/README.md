@@ -1,7 +1,7 @@
   
 // ..
   
-# 1.5 Casting
+## 1.5 Casting
   
 * Casting down the hierarchy is done implicitly, only up needs to be explicit.
 * Method that are available on the object depends on the declared type (type of the reference).
@@ -28,7 +28,7 @@
 * Left side of instanceof operator - a value (literal/variable). Rigth side - a class, interface or enum name. Left side can be null, right side cannot.
   
   
-# 1.6 Packages(packages_and_import)
+## 1.6 Packages(packages_and_import)
   
 * Packages group a related set of enums, classes and interfaces. They are also a namespace substitution.
 * When in a class there's no package statement, it is considered a default package. Package statement should be a first statement in a class. Only comments can precede.
