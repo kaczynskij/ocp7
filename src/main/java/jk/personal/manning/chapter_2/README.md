@@ -117,13 +117,91 @@ Animal
 
 ### Twist in the Tale 2.3
 
+--> won't compile
 
 
+* Final method cannot be overriden. If one try to override final method, it won't compile.
+* One can override only inherited members, so final but private method in derived class can seem to be overriden [Example](final_keyword/Base.java)
 
 
+* Classes marked as final cannot be extended.
+* Keywords final and abstract cannot be used together.
 
 
+## 2.3 Enumerated types
+
+* Enum is a data type which defines a finite set of objects. One cannot create own, new enum objects, just use existing and defined ones - enum has a fixed set of constants [Example](enums/GameApp.java)
+* Enums are implicitly declared final.
+* By default a set of methods, fields and private constructor is added to every enum.
+
+### Twist in the Tale 2.4
+
+--> a.
 
 
+* All enums extends java.lang.Enum class - so if one try to set the custom enum to extend other class - it won't compile. It can implement any interface, however [Example](enums/Person.java)
+* The default order of enums is the order of definition, not alphabetical [Example](enums/TestEnum.java)
+* Any member of a class can be added to enum (variables, constructors, methods...). Constants list must be first statement in enum definition [Example](enums/IceCream.java)
+* Semicolon is mandatory at the end of enum list only, if there is additional custom member.
+* Each enum can also have overriden specific methods [Example](enums/IceCream.java)
+* One can add a custom constructor to enum, the constructor can have a default or private access modifier.
+* If one define a constant-specific class body with additional method, it cannot be accessed in fact [Example](enums/UseIceCream.java)
+* Enum can be defined as top-level type or as a member of a class / interface. Cannot be a local member [Example](enums/MyClass.java)
+* Enum can define an abstract method, but it must be overriden it in all enum constants.
+
+
+### Twist in the Tale 2.5
+
+--> c.
+
+
+## 2.4 Static nested and inner classes
+
+* One class can be a member of another class - so called nested classes. They can be static (nested class) or non-static (inner class).
+* Nested / inner classes, like top-level ones, can define variables and members.
+* Inner classes can be defined within methods and without a name.
+
+
+* *Static nested class* is a member of its enclosing class and can access all static members of its outer class.
+* *Inner class* is an instance member, it can access all the instance and static members, including private ones.
+* *Method local inner class* is defined inside a method and can access all members of outer class. including private ones.
+* *Anonymous inner class* - a local class without a name.
+* Inner classes are useful to encapsulate a part of the functionality that is immanently bound to the outer class.
+
+
+* Static nested class can exists without the instance of its outer class. It can be referred like a static member of a class.
+* Static nested class is initialized when it's loaded with outer class in memory.
+* Access to nested class can be restricted by using access modifiers.
+* From within the outer class, nested class can be instantiated without prefixing. But from outside, it always needs a prefix OuterClass.InnerClass [Example](nested/Outer.java)
+* Available access levels for SNC: all. The accessibility of inner class depends on the accessibility of outer class.
+* A static nested class can access only a static members of outer class.
+
+
+* Inner class is an instance member of outer class, hence it cannot exists without outer class instance [Example](inner/Tree.java)
+* Any access modifier is available for inner class, it can also define constructors, variables, methods. CANNOT define non-final static variables or methods [Example](inner/Outer.java)
+* Inner class can be created: as an instance member, within a method of an outer class, withing a static method of an outer class and outside the outer class [Example](inner/Outer.java)
+* To create an instance of inner class, a new keyword needs to be used: outerObject.new Inner()  [Example](inner/Foo.java)
+* Inner class, as a member of outer class, can access all its members.
+* Keyword this in inner class refers to the inner class instance. To reach to the outer class - Outer.this [Example](inner/Outer.java)
+
+
+### Twist in the Tale 2.6
+
+--> e.
+
+
+* Anonymous inner class is an inner class defined without explicit name and is used mainly when one needs to override method of a class for only one, particular instance without defining a new class.
+* The anonymous class can override none, few or all methods of the inherited class or all methods of the implemented interface.
+* A new object created with use of anonymous inner class can be assigned to any type of variable (static, instance, local, method parameter or returned from a method) [Example](anonymous/Lecture.java)
+* Anonymous classes can be used to provide implementation of an interface [Example](anonymous/BirdSanctuary.java)
+* However, anonymous inner class can extend one class or implement one interface.
+
+
+* Method local inner classes are defined in the body of a method (static or instance).
+* Java compiler creates a separate class fine for each method inner class and inner class name can be the same for every method.
+* MLIC itself CANNOT be defined with any access modifier. However, it CAN define ctor, variable and method using any of access level modifier. 
+* No static members for method local inner class.
+* An object of MLIC can be created only within a method it's defined [Example](anonymous/Outer.java)
+* MLIC can access all variables and methods of the outer class (incl. private and inherited ones). They can be referred using the name of outer class by using Outer.this [Example](anonymous/Outer.java) 
 
 
